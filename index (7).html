@@ -1,0 +1,191 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+
+    <title>VayuDrone - Coming Soon</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @media (max-width: 639px) {
+        .hero-bg {
+          background-position: 65% center;
+        }
+      }
+      .notification {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+        animation: slideIn 0.3s, fadeOut 0.2s 1.5s forwards;
+      }
+      @keyframes slideIn {
+        from { right: -300px; opacity: 0; }
+        to { right: 20px; opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#fcf8f8] group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+      <!-- Notification Toast -->
+      <div id="notification" class="notification"></div>
+      
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="sm:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat sm:gap-8 sm:rounded-lg items-center justify-center p-4 hero-bg"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3KIRnCTHOxVKqDhVhHEn-YI-6GqySDISHUjRNxjTTFBg45x62VWyrfj91h9cWqwwMwGnJOIVYd7IfBchhcwzYg3WHRy0ues0t1CENRvlF1NC48wkjbnF0tOVBSU10_lRSHMbejPg0qir8u7ro4H-T1ov6feNafFu_-PyHdn6-1n114kdqYnLRo7bV7lLXBYjXT-diPChr7StihV2_C0-n9lGarRiQRD_KYzWjvxqUc33O5pTP6HBX18yYk-Cw0HRHAJgPhgaZ2wy");'
+                >
+                  <div class="flex flex-col gap-2 text-center px-2 sm:px-0">
+                    <h1
+                      class="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                    >
+                      VayuDrone India is Coming Soon...Revolutionizing Agriculture Through Drones
+                    </h1>
+                    <h2 class="text-white text-sm sm:text-base font-normal leading-normal mt-2">
+                      Launching across India to empower farmers with drone technology.
+                    </h2>
+                  </div>
+                  <div class="w-full max-w-[480px] px-2 sm:px-0">
+                    <form id="notifyForm" class="flex flex-col gap-2">
+                      <label class="flex flex-col min-w-40 h-14 sm:h-16 w-full">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                          <div
+                            class="text-[#994d51] flex border border-[#e7d0d1] bg-[#fcf8f8] items-center justify-center pl-3 sm:pl-[15px] rounded-l-lg border-r-0"
+                            data-icon="MagnifyingGlass"
+                            data-size="20px"
+                            data-weight="regular"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <input
+                            id="emailInput"
+                            type="email"
+                            placeholder="Enter your email"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1b0e0e] focus:outline-0 focus:ring-0 border border-[#e7d0d1] bg-[#fcf8f8] focus:border-[#e7d0d1] h-full placeholder:text-[#994d51] px-3 sm:px-[15px] rounded-r-none border-r-0 text-sm sm:text-base font-normal leading-normal"
+                            required
+                          />
+                          <div class="flex items-center justify-center rounded-r-lg border-l-0 border border-[#e7d0d1] bg-[#fcf8f8] pr-1 sm:pr-[7px]">
+                            <button
+                              type="submit"
+                              id="notifyButton"
+                              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 sm:h-12 px-3 sm:px-4 md:px-5 bg-[#ea2832] text-[#fcf8f8] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#d11f29] transition-colors duration-200"
+                            >
+                              <span class="truncate">Notify Me</span>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+                      <p id="errorMessage" class="text-red-500 text-xs sm:text-sm hidden"></p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="flex flex-col gap-6 px-2 sm:px-5 py-8 sm:py-10 text-center @container">
+              <p class="text-[#994d51] text-sm sm:text-base font-normal leading-normal">© 2025 VayuDrone . All rights reserved.</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const notifyForm = document.getElementById('notifyForm');
+        const emailInput = document.getElementById('emailInput');
+        const notifyButton = document.getElementById('notifyButton');
+        const errorMessage = document.getElementById('errorMessage');
+        const notification = document.getElementById('notification');
+
+        notifyForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Validate email
+          const email = emailInput.value.trim();
+          if (!email) {
+            showError('Please enter your email address');
+            return;
+          }
+          
+          if (!isValidEmail(email)) {
+            showError('Please enter a valid email address');
+            return;
+          }
+          
+          // Disable button during submission
+          notifyButton.disabled = true;
+          notifyButton.innerHTML = '<span class="truncate">Sending...</span>';
+          
+          // Simulate API call (replace with actual API call)
+          setTimeout(() => {
+            // Reset form
+            notifyForm.reset();
+            notifyButton.disabled = false;
+            notifyButton.innerHTML = '<span class="truncate">Notify Me</span>';
+            
+            // Show success message
+            showNotification('Thank you! We will notify you when we launch.');
+          }, 1500);
+        });
+        
+        function isValidEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+        
+        function showError(message) {
+          errorMessage.textContent = message;
+          errorMessage.classList.remove('hidden');
+          
+          // Hide error after 5 seconds
+          setTimeout(() => {
+            errorMessage.classList.add('hidden');
+          }, 5000);
+        }
+        
+        function showNotification(message) {
+          notification.textContent = message;
+          notification.style.display = 'block';
+          notification.style.backgroundColor = '#4CAF50';
+          
+          // Reset animation by removing and re-adding the element
+          notification.style.animation = 'none';
+          setTimeout(() => {
+            notification.style.animation = 'slideIn 0.5s, fadeOut 0.5s 2.5s forwards';
+          }, 10);
+          
+          // Hide after animation completes
+          setTimeout(() => {
+            notification.style.display = 'none';
+          }, 3500);
+        }
+      });
+    </script>
+  </body>
+</html>
